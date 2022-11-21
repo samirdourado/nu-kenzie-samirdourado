@@ -1,0 +1,105 @@
+@media(max-width: 768px) {
+    .cardBalance {
+        width: 540px;
+        height: 87px;
+        min-height: 87px;
+        border: none;
+        border-radius: 8px;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 32px;
+    }
+    .entrie {
+        background-color: var(--color-secondary);
+    }
+    
+    .cardBalance__bg {
+        background-color: var(--grey-1);
+        width: 556px;
+        padding: 0 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    
+    .cardBalance__bg > div {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .cardBalance__bg > div > div{
+        display: flex;
+    }
+    
+}
+
+@media(min-width: 769px) {
+    .cardBalance {
+        width: 540px;
+        height: 87px;
+        min-height: 87px;
+        border: none;
+        border-radius: 8px;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 32px;
+    }
+    .entrie {
+        background-color: var(--color-secondary);
+    }
+    
+    .out {
+        background-color: var(--grey-2);
+    }
+    
+    .cardBalance__bg {
+        background-color: var(--grey-1);
+        width: 536px;
+        padding: 0 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    
+    .cardBalance__bg > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .cardBalance__bg > div > p {
+        font-family: 'Nunito';
+        font-weight: 700;
+        font-size: var(--headline);
+    }
+    
+    .cardBalance__bg > div > div{
+        display: flex;
+        gap: 27px;
+    }
+
+    .cardBalance__bg > div > div > p,
+    .cardBalance__bg > p {
+        font-family: 'Nunito';
+        font-weight: 400;
+        font-size: var(--title-4);        
+    }
+
+    .removeBtn {
+        background-image: url("../../assets/trash-act.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: var(--grey-2);
+        width: 22px;
+        height: 22px;
+        border: none;
+        border-radius: 2.46px;
+        cursor: pointer;
+    }
+
+    .removeBtn:hover {
+        background-image: url("../../assets/trash-hov.svg");
+        background-color: var(--grey-3);
+        transition: var(--animation-duration) var(--animation-type);
+    }    
+}
