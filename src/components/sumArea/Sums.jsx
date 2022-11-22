@@ -1,9 +1,7 @@
 import '../../Global.css';
 import "./sum.css"
 
-function SumBalance({listTransactions, setListTransactions}) {
-
-   
+function SumBalance({listTransactions, setListTransactions}) {   
 
     function values() {
         const total = listTransactions.reduce((acc, act) => {

@@ -52,6 +52,10 @@
       height: 48px;
       border: solid 2px var(--color-primary-1);
       border-radius: 8px;
+      font-family: 'Inter';
+      font-weight: 500;
+      font-size: var(--headline);
+      color: var(--grey-1);
       cursor: pointer;
     }
     
@@ -128,4 +132,14 @@
       max-width: 280px;
       max-height: 280px;
     }
+  }
+
+
+  .home__container > div > button {
+    
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: var(--headline);
+    color: var(--grey-1);
+    cursor: pointer;
   }

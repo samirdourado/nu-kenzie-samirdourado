@@ -5,6 +5,7 @@
 header {
     width: 100%;
     height: 88px;
+    min-width: 320px;
     display: flex;
     justify-content:center;
     align-items: center;
@@ -12,11 +13,16 @@ header {
 }
 
 .goHome {
-    font-size: 14px;
+    font-family: 'Nunito';
     font-weight: 600;
+    font-size: 14px;
     text-align: center;
     padding: 10.5px 15px;
     cursor: pointer;
+    color: var(--grey-3);
+    background-color: var(--grey-2);
+    border: solid 1px var(--grey-2);
+    border-radius: 8px;
 }
 
 main {
@@ -24,6 +30,7 @@ main {
     margin: 0 auto;
     margin-top: 39px;
     /* width: 90%; */
+    min-width: 320px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
