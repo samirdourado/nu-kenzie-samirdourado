@@ -13,8 +13,6 @@ function App() {
         || 
         access === false ? <Dashboard setAccess={setAccess} /> : <HomePage />
       }
-      
-      {/* <Dashboard /> */}
     </>
   )  
 }

@@ -8,52 +8,38 @@ import FilterButtons from '../../components/buttonsFilter/ButtonFilter';
 import { EntriesBalance, EmptyBalance } from '../../components/balance/BalanceCard';
 
 
-function Dashboard() {
+function Dashboard({setAccess}) {
 
     const [listTransactions, setListTransactions] = useState([
         { description: "Salário recebido", type: "entrada", value: 2500 },
-        { description: "Conta de luz", type: "saída", value: -150 }
+        { description: "Conta de luz", type: "saida", value: 150 }
     ])
     
-    function RemoveItem({removeByDescription}) {
+    function removeItem({removeByDescription}) {
         const newList = listTransactions.filter((item) =>  item.description !== removeByDescription)
         console.log(newList)
     }
     
-    const [filter, setFilter] = useState("")
-    
-    function typeLists() {
-        listTransactions.filter((item) => {
-            if(filter === "todos") {
-                return item
-            }
-            else {
-                return item.type === filter
-            }
-        })
-    }
+    const [filter, setFilter] = useState([])
     
     return(
         <div>
-            <HeaderPage></HeaderPage>
+            <HeaderPage setAccess={setAccess}/>
 
             <main>
-                <TransactionUser listTransactions={listTransactions} setListTransactions={setListTransactions} RemoveItem={RemoveItem}/>
+                <TransactionUser listTransactions={listTransactions} setListTransactions={setListTransactions} removeItem={removeItem} setFilter={setFilter}/>
 
                 <aside>
-                    <FilterButtons listTransactions={listTransactions} setListTransactions={setListTransactions} setFilter={setFilter} typeLists={typeLists}/>
+                    <FilterButtons listTransactions={listTransactions} setFilter={setFilter}/>
                     
 
                     <ul className='listHolder'>
-                        
-                        {listTransactions.length === 0 ? 
-                            <EmptyBalance/>
-                            : 
-                            <EntriesBalance listTransactions={listTransactions} setListTransactions={setListTransactions}/>
+                        {listTransactions.length === 0 ? <EmptyBalance/> : 
+                        filter.length > 0 ?  <EntriesBalance listTransactions={filter} setListTransactions={setListTransactions}/>
+                        :
+                        <EntriesBalance listTransactions={listTransactions} setListTransactions={setListTransactions}/>
                         }
-
-                    </ul>
-                    
+                    </ul>                    
                 </aside>
             </main>
         </div>       
